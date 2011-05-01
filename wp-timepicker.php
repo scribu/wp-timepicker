@@ -56,7 +56,7 @@ class WP_Timepicker {
 	}
 
 	function register() {
-		$url = plugins_url('timepicker', __FILE__);
+		$url = plugins_url('', __FILE__);
 
 		$js_dev = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '.dev' : '';
 
