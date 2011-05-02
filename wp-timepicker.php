@@ -60,13 +60,15 @@ class WP_Timepicker {
 
 		$js_dev = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '.dev' : '';
 
-		wp_register_style('jquery-ui-smoothness', "$url/css/smoothness/smoothness.css", array(), '1.8.6');
+		$ui_version = '1.8.12';
 
-		wp_register_script('jquery-ui-datepicker', "$url/js/ui.datepicker.js", array('jquery-ui-core'), '1.8.6', true);
+		wp_register_style('jquery-ui-smoothness', "$url/css/smoothness/smoothness.css", array(), $ui_version);
 
-		wp_register_script('jquery-ui-slider', "$url/js/ui.slider.js", array('jquery-ui-mouse'), '1.8.6', true);
+		wp_register_script('jquery-ui-datepicker', "$url/js/ui.datepicker.js", array('jquery-ui-core'), $ui_version, true);
 
-		wp_register_script('timepicker', "$url/js/timepicker$js_dev.js", array('jquery-ui-datepicker', 'jquery-ui-slider'), '0.9', true);
+		wp_register_script('jquery-ui-slider', "$url/js/ui.slider.js", array('jquery-ui-mouse'), $ui_version, true);
+
+		wp_register_script('timepicker', "$url/js/timepicker$js_dev.js", array('jquery-ui-datepicker', 'jquery-ui-slider'), '0.9.3', true);
 	}
 
 	function enqueue() {
